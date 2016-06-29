@@ -1,0 +1,10 @@
+
+
+<select ng-options="color.text group by color.type for color in colors" ng-model="myColor" ng-change="changeColor()" ></select>
+
+<span ng-class="selectedClass">Color Test</span> <br>
+filter by: <input name="input1" ng-model="filterBy" required>
+order by:  <input name="input2" ng-model="orderBy" required>
+
+
+<li ng-repeat="color in colors | filter:{text:filterBy} | orderBy:orderBy">{{color.text}}</li>
